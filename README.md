@@ -14,6 +14,7 @@ Deployment and Optimization: Deploy my API to a suitable platform and optimize i
 Detailed plan for my project, incorporating both the frontend and backend components. I make choices based on the information and analysis we've gathered.
 This plan provides a structured approach to developing a full-stack application with a .NET Core backend and a React frontend. It emphasizes robust development practices, security, testing, and deployment strategies to ensure a scalable and maintainable application.
 NB: this plan can be adjusted as i progress to fit the specific needs and challenges of my project.
+
 Backend (REST API with .NET Core)
 
 1. Planning
@@ -22,7 +23,7 @@ Identify key resources and data models.
 Design the API endpoints (CRUD operations for each resource).
 2. Development Environment
 Language & Framework: .NET Core for robust and scalable APIs.
-IDE: Visual Studio Code or JetBrains Rider for development.
+IDE: Visual Studio Code for development.
 Database: SQL Server or PostgreSQL for relational data storage.
 3. API Development
 Implement the planned endpoints using .NET Core.
