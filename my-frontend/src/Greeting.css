@@ -1,0 +1,12 @@
+.greeting-form input {
+    margin-right: 10px;
+    padding: 8px;
+}
+
+.greeting-form button {
+    padding: 8px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
