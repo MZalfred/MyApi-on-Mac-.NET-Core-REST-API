@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('Welcome to React!');
+  const [message, setMessage] = useState('Welcome Alfred here!');
 
   return (
     <div className="App">
@@ -12,7 +12,7 @@ function App() {
         <p>
           {message}
         </p>
-        <button onClick={() => setMessage('You clicked the button!')}>
+        <button onClick={() => setMessage('Click the button!')}>
           Click me
         </button>
         <a
