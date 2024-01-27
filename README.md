@@ -11,8 +11,9 @@ Data Storage: Choose the right database system, create efficient database schema
 Documentation and Security: Comprehensive documentation is essential for other developers to use my API effectively. Implement security measures like HTTPS, input sanitization, rate limiting, and CORS if necessary.
 Deployment and Optimization: Deploy my API to a suitable platform and optimize its performance as needed.
 
-detailed plan for my project, incorporating both the frontend and backend components. We'll make choices based on the information and analysis we've gathered.
-
+Detailed plan for my project, incorporating both the frontend and backend components. I make choices based on the information and analysis we've gathered.
+This plan provides a structured approach to developing a full-stack application with a .NET Core backend and a React frontend. It emphasizes robust development practices, security, testing, and deployment strategies to ensure a scalable and maintainable application.
+NB: this plan can be adjusted as i progress to fit the specific needs and challenges of my project.
 Backend (REST API with .NET Core)
 
 1. Planning
