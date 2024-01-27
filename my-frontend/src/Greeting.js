@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
 
 function Greeting() {
-  // This is a "state" that remembers the message.
-  const [message, setMessage] = useState('Hello, world!');
+    const [name, setName] = useState('');
+    const [greeting, setGreeting] = useState('Welcome Alfred here!');
 
-  // This function changes the message when the button is clicked.
-  const changeMessage = () => {
-    setMessage('Hello, React!');
-  };
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    };
 
-  return (
-    <div>
-      <h1>{message}</h1> {/* This shows the message */}
-      <button onClick={changeMessage}>Change Message</button>
-    </div>
-  );
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setGreeting(`Hello, ${name}!`);
+    };
+
+    return (
+        <div>
+            <h1>{greeting}</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={handleNameChange}
+                />
+                <button type="submit">Greet Me</button>
+            </form>
+        </div>
+    );
 }
 
 export default Greeting;
