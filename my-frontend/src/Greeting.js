@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './Greeting.css';
 
 function Greeting() {
     const [name, setName] = useState('');
-    const [greeting, setGreeting] = useState('Welcome Alfred here!');
+    const [greetingsList, setGreetingsList] = useState([]);
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -10,12 +11,16 @@ function Greeting() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setGreeting(`Hello, ${name}!`);
+        if (name) {
+            const newGreeting = `Hello, ${name}!`;
+            setGreetingsList([...greetingsList, newGreeting]);
+            setName('');
+        }
     };
 
     return (
         <div>
-            <h1>{greeting}</h1>
+            <h1>Welcome to React!</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -25,6 +30,11 @@ function Greeting() {
                 />
                 <button type="submit">Greet Me</button>
             </form>
+            <div className="greeting-list">
+                {greetingsList.map((greeting, index) => (
+                    <p key={index}>{greeting}</p>
+                ))}
+            </div>
         </div>
     );
 }
