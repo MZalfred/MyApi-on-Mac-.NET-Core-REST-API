@@ -17,12 +17,14 @@ function Greeting() {
     // Handles the form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (name) {
-            const newGreeting = `Hello, ${name}!`;
-            setGreetingsList([...greetingsList, newGreeting]);
-            setName('');
-        }
-    };
+        if (!name.trim()) {
+        alert('Please enter a name.'); // Alert if name is empty
+        return;
+    }
+    const newGreeting = `Hello, ${name}!`;
+    setGreetingsList([...greetingsList, newGreeting]);
+    setName('');
+    };   
 
     // Deletes a greeting from the list
     const handleDelete = (index) => {
