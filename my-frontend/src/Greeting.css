@@ -15,3 +15,8 @@
     color: green;
     font-weight: bold;
 }
+
+.edit-button, .delete-button {
+    margin-left: 10px;
+  }
+  
