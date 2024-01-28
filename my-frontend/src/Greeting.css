@@ -10,3 +10,8 @@
     border: none;
     cursor: pointer;
 }
+
+.greeting-list p {
+    color: green;
+    font-weight: bold;
+}
