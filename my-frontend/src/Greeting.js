@@ -28,6 +28,7 @@ function Greeting() {
     const handleDelete = (index) => {
         const newGreetingsList = greetingsList.filter((_, idx) => idx !== index);
         setGreetingsList(newGreetingsList);
+        alert('Greeting deleted.'); // Alert when a greeting is deleted
     };
 
     // Starts editing a greeting
@@ -42,6 +43,7 @@ function Greeting() {
         updatedGreetings[index] = editText;
         setGreetingsList(updatedGreetings);
         setEditIndex(-1);
+        alert('Greeting updated.'); // Alert when a greeting is updated
     };
 
     // JSX rendering of the component
@@ -70,6 +72,9 @@ function Greeting() {
                         ) : (
                             <button onClick={() => handleStartEdit(index, greeting)}>Edit</button>
                         )}
+                        {editIndex === index ? (
+                            <button onClick={() => setEditIndex(-1)}>Cancel</button>
+                        ) : null}
                         <button onClick={() => handleDelete(index)}>Delete</button>
                     </div>
                 ))}
