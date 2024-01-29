@@ -23,3 +23,34 @@
   @media (max-width: 600px) {
     /* Styles for mobile devices */
 }
+
+.greeting-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Add more styles as needed */
+}
+
+.greeting-form, .sort-filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Add more styles as needed */
+}
+
+.greeting-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add more styles as needed */
+}
+
+.greeting-item, .edit-greeting, .display-greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    /* Add more styles as needed */
+}
