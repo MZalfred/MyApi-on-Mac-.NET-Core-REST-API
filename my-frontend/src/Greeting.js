@@ -80,42 +80,45 @@ function Greeting() {
     const filteredGreetings = greetingsList.filter(greeting =>
         greeting.toLowerCase().includes(filterQuery.toLowerCase())
     );
-
+    
     // JSX rendering
     return (
-        <div>
-            <h1>Welcome Alfred here!</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Enter your name" value={name} onChange={handleNameChange} />
-                <button type="submit">Greet Me</button>
-            </form>
-            <div>
-                <button onClick={() => sortGreetings('alphabetical')}>Sort Alphabetically</button>
-                <input type="text" placeholder="Filter greetings..." value={filterQuery} onChange={(e) => setFilterQuery(e.target.value)} />
-                {/* Display the current sort order */}
-                <p>Current Sort Order: {sortOrder === 'alphabetical' ? 'Alphabetial' : 'None'}</p>
-            </div>
-            <div className="greeting-list">
-                {filteredGreetings.map((greeting, index) => (
-                    <div key={index}>
-                        {editIndex === index ? (
-                            <>
-                                <input value={editText} onChange={(e) => setEditText(e.target.value)} />
-                                <button onClick={() => handleSaveEdit(index)}>Save</button>
-                                <button onClick={() => setEditIndex(-1)}>Cancel</button>
-                            </>
-                        ) : (
-                            <>
-                                <p>{greeting}</p>
-                                <button onClick={() => handleStartEdit(index, greeting)}>Edit</button>
-                            </>
-                        )}
-                        <button onClick={() => handleDelete(index)}>Delete</button>
-                    </div>
-                ))}
-            </div>
+    <div className="greeting-container"> {/* Main container with Flexbox */}
+        <h1>Welcome Alfred here!</h1>
+        
+        <form onSubmit={handleSubmit} className="greeting-form"> {/* Form section with Flexbox */}
+            <input type="text" placeholder="Enter your name" value={name} onChange={handleNameChange} />
+            <button type="submit">Greet Me</button>
+        </form>
+
+        <div className="sort-filter-container"> {/* Sorting and filtering section with Flexbox */}
+            <button onClick={() => sortGreetings('alphabetical')}>Sort Alphabetically</button>
+            <input type="text" placeholder="Filter greetings..." value={filterQuery} onChange={(e) => setFilterQuery(e.target.value)} />
+            <p>Current Sort Order: {sortOrder === 'alphabetical' ? 'Alphabetical' : 'None'}</p>
         </div>
-    );
+
+        <div className="greeting-list"> {/* Greetings list with Flexbox */}
+            {filteredGreetings.map((greeting, index) => (
+                <div key={index} className="greeting-item"> {/* Individual greeting item with Flexbox */}
+                    {editIndex === index ? (
+                        <div className="edit-greeting">
+                            <input value={editText} onChange={(e) => setEditText(e.target.value)} />
+                            <button onClick={() => handleSaveEdit(index)}>Save</button>
+                            <button onClick={() => setEditIndex(-1)}>Cancel</button>
+                        </div>
+                    ) : (
+                        <div className="display-greeting">
+                            <p>{greeting}</p>
+                            <button onClick={() => handleStartEdit(index, greeting)}>Edit</button>
+                            <button onClick={() => handleDelete(index)}>Delete</button>
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+    </div>
+);
+
 }
 
 export default Greeting;
