@@ -1,6 +1,0 @@
-# Ignore all .csproj files
-**/*.csproj
-
-# Ignore build output
-bin/
-obj/
