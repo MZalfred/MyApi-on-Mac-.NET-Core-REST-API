@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <!-- Other project properties -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Your package references and other project items -->
+  </ItemGroup>
+</Project>
